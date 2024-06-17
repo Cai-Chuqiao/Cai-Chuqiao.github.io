@@ -48,7 +48,7 @@ git commit -m "deploy commit"
 git push
 yarn deploy
 ```
-###Шаг3.5
+### Шаг3.5
 Выберите `pages` в `Settings` вашего репозитория, измените `Branch` на `gh-pages` и нажмите `Save`, 
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/d1456289-e90f-4af4-b16b-38bbdae2c04c)
 после чего вы сможете запустить свой проект React, открыв URL-адрес ваших страниц GitHub.
