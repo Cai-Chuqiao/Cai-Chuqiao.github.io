@@ -7,22 +7,22 @@
 в `./public/model/`.
 ## #Шаг2.2
 Измените `yolov8-seg.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
-`
+```json
           patterns: [
             { from: "node_modules/onnxruntime-web/dist/*.wasm", to: "static/js/[name][ext]" },
             { from: './public/model/model.onnx', to: '[name][ext]'},
             { from: './public/model/nms-yolov8.onnx', to: '[name][ext]'},
             { from: './public/model/mask-yolov8-seg.onnx', to: '[name][ext]'}
           ],
-`
+```
 Измените метку в `./src/utils/label.json` на класс, распознаваемый вашей собственной моделью.<br>
-`
+```json
 [
   "airplane",
   "weather_balloon",
   "UFO"
 ]
-`
+```
 ### Шаг2.3
 Удалите папку `node_modules` в корневом каталоге.
 ### Шаг2.3
@@ -41,13 +41,13 @@
 Используйте `git pull`, чтобы загрузить проект в свой репозиторий.<br>
 ### Шаг3.4
 Откройте терминал в корневом каталоге вашего локального проекта React и последовательно запустите:<br>
-`
+```
 yarn add gh-pages --save-dev
 git add .
 git commit -m "deploy commit"
 git push
 yarn deploy
-`
+```
 ###Шаг3.5
 Выберите `pages` в `Settings` вашего репозитория, измените `Branch` на `gh-pages` и нажмите `Save`, 
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/d1456289-e90f-4af4-b16b-38bbdae2c04c)
