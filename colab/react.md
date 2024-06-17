@@ -5,7 +5,7 @@
 ### Шаг2.1
 Поместите файл модели ONNX, созданный вами в [yolov8+onnx.ipynb](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/colab/yolov8%2Bonnx.ipynb), 
 в `./public/model/`.
-## #Шаг2.2
+### Шаг2.2
 Измените `yolov8-seg.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
 ```
           patterns: [
