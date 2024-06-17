@@ -7,7 +7,7 @@
 в `./public/model/`.
 ## #Шаг2.2
 Измените `yolov8-seg.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
-```json
+```
           patterns: [
             { from: "node_modules/onnxruntime-web/dist/*.wasm", to: "static/js/[name][ext]" },
             { from: './public/model/model.onnx', to: '[name][ext]'},
