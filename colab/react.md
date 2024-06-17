@@ -1,5 +1,6 @@
 ## Шаг1. Загрузите программу прототипа реагирования локально.
-Используйте ·git clone· для локальной загрузки программы-прототипа React.<br>
+Используйте `git clone` для локальной загрузки программы-прототипа React.
+Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
 `git clone https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io`
 ## Шаг2. Развертывайте проекты React локально
 ### Шаг2.1
