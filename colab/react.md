@@ -144,7 +144,7 @@ root.render(
   </body>
 </html>
 ```
-В папке `public` создаем папку `model`. Загрузите nms-yolov8.onnx и mask-yolov8-seg.onnx и поместите их внутрь. Также поместите в ней файл model.onnx, экспортированный вашей обученной моделью yolov8.
+В папке `public` создаем папку `model`. Загрузите nms-yolov8.onnx и mask-yolov8-seg.onnx и поместите их внутрь.
 6) В папке `src` создаем папку `components`. В ней создаем файл `loader.js`:
 ```
 import React from "react";
@@ -608,30 +608,6 @@ import { detectImage } from "./utils/detect";
 // import { download } from "./utils/download";
 import "./style/App.css";
 ```
-Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
-`git clone https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io`
-## Шаг2. Развертывайте проекты React локально
-### Шаг2.1
-Поместите файл модели ONNX, созданный вами в [yolov8+onnx.ipynb](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/colab/yolov8%2Bonnx.ipynb), 
-в `./public/model/`.
-### Шаг2.2
-Измените `yolov8-seg.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
-```
-          patterns: [
-            { from: "node_modules/onnxruntime-web/dist/*.wasm", to: "static/js/[name][ext]" },
-            { from: './public/model/model.onnx', to: '[name][ext]'},
-            { from: './public/model/nms-yolov8.onnx', to: '[name][ext]'},
-            { from: './public/model/mask-yolov8-seg.onnx', to: '[name][ext]'}
-          ],
-```
-Измените метку в `./src/utils/label.json` на класс, распознаваемый вашей собственной моделью.<br>
-```json
-[
-  "airplane",
-  "weather_balloon",
-  "UFO"
-]
-```
 9) В файле `index.js` добавите:
 ```
 import React, { useState, useRef } from "react";
@@ -769,10 +745,33 @@ const App = () => {
 };
 export default App;
 ```
-10) Загрузите файл yarn.lock и поместите его в корневую папку. yarn.lock гарантирует согласованность версий зависимостей, установленных в разных средах. Это помогает избежать потенциальных проблем и ошибок, вызванных несовместимыми версиями зависимостей.
+10) Загрузите файл yarn.lock и поместите его в корневую папку. yarn.lock гарантирует согласованность версий зависимостей, установленных в разных средах. Это помогает избежать потенциальных проблем и ошибок, вызванных несовместимыми версиями зависимостей.<br>
 
-### Шаг2.3
-Удалите папку `node_modules` в корневом каталоге.
+Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
+`git clone https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io`
+
+## Шаг2. Развертывайте проекты React локально
+### Шаг2.1
+Поместите файл модели ONNX, созданный вами в [yolov8+onnx.ipynb](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/colab/yolov8%2Bonnx.ipynb), 
+в `./public/model/`.
+### Шаг2.2
+Измените `yolov8-seg.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
+```
+          patterns: [
+            { from: "node_modules/onnxruntime-web/dist/*.wasm", to: "static/js/[name][ext]" },
+            { from: './public/model/model.onnx', to: '[name][ext]'},
+            { from: './public/model/nms-yolov8.onnx', to: '[name][ext]'},
+            { from: './public/model/mask-yolov8-seg.onnx', to: '[name][ext]'}
+          ],
+```
+Измените метку в `./src/utils/label.json` на класс, распознаваемый вашей собственной моделью.<br>
+```json
+[
+  "airplane",
+  "weather_balloon",
+  "UFO"
+]
+```
 ### Шаг2.3
 Если вы хотите развернуть проект React только локально, вы можете выполнить действия, описанные в [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master), 
 но если вы хотите развернуть проект React на страницах GitHub, вам не нужно выполнять `yarn install`, `yarn start` и `yarn build`, 
