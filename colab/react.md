@@ -1,5 +1,106 @@
-## Шаг1. Загрузите программу прототипа реагирования локально.
-Используйте `git clone` для локальной загрузки программы-прототипа React.
+## Шаг1. Сборка приложения.
+1) В терминале в папке приложения `onnx-app` выполнить `npm init –y`.
+2) Заменить содержимое package.json на следующее:
+```
+{
+  "name": "yolov8seg",
+  "homepage": "https://your_github_id.github.io/",
+  "version": "0.1.0",
+  "dependencies": {
+    "@techstark/opencv-js": "4.5.5-release.2",
+    "onnxruntime-web": "^1.14.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "gh-pages": "^6.1.1"
+  }
+}
+```
+3) В корне проекта создать файл `craco.config.js` со следующим содержанием:
+```
+const CopyPlugin = require("copy-webpack-plugin");
+
+module.exports = {
+  webpack: {
+    plugins: {
+      add: [
+        new CopyPlugin({
+          // Use copy plugin to copy *.wasm to output folder.
+          patterns: [
+            { from: "node_modules/onnxruntime-web/dist/*.wasm", to: "static/js/[name][ext]" },
+            { from: './public/model/model.onnx', to: '[name][ext]'},
+            { from: './public/model/nms-yolov8.onnx', to: '[name][ext]'},
+            { from: './public/model/mask-yolov8-seg.onnx', to: '[name][ext]'}
+          ],
+        }),
+      ],
+    },
+    configure: (config) => {
+      // set resolve.fallback for opencv.js
+      config.resolve.fallback = {
+        fs: false,
+        path: false,
+        crypto: false,
+      };
+      return config;
+    },
+  },
+};
+```
+4) Проверить, что приложение собирается. Создадать папку `src` в корне проекта. В папке src создаем папку components. В ней создаем файл `App.js`:
+```
+import React from "react";
+
+export const App = () => {
+    return (
+        <div>
+            Пример onnx
+        </div>
+    )
+}
+```
+В папке src создать файл `index.js`:
+```
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./style/index.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+```
 Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
 `git clone https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io`
 ## Шаг2. Развертывайте проекты React локально
