@@ -302,7 +302,7 @@ code {
   margin: 0;
 }
 ```
-8) В папке `src` создаем папку `style`. Она используется для хранения файлов стилей страницы. Она используется для хранения некоторых файлов, в которых хранятся функции.
+8) В папке `src` создаем папку `utils`. Она используется для хранения некоторых файлов, в которых хранятся функции.
 В ней создаем файл `detect.js`, в него хранится функции для обработки вывода тензоров по модели yolov8:
 ```
 import cv from "@techstark/opencv-js";
@@ -597,18 +597,7 @@ export class Colors {
   "UFO"
 ]
 ```
-9) Для того чтобы запустить анализ, необходимо подготовить входные данные, т.е. преобразовать изображение в тензор. Для этого нужно запустить функцию предобработки для загруженного изображения и преобразовать ее в тензор. Итак, нужно добавить в `App.js` следующий код:
-```
-...
-
-import cv from "@techstark/opencv-js";
-import { Tensor, InferenceSession } from "onnxruntime-web";
-import Loader from "./components/loader";
-import { detectImage } from "./utils/detect";
-// import { download } from "./utils/download";
-import "./style/App.css";
-```
-9) В файле `index.js` добавите:
+9) Для того чтобы запустить анализ, необходимо подготовить входные данные, т.е. преобразовать изображение в тензор. Для этого нужно запустить функцию предобработки для загруженного изображения и преобразовать ее в тензор. После того, как входной тензор рассчитан моделью и получены выходные данные, выходной тензор необходимо подвергнуть постобработке, чтобы отобразить результат распознавания на изображении. Итак, нужно добавить в `App.js` следующий код:
 ```
 import React, { useState, useRef } from "react";
 import cv from "@techstark/opencv-js";
@@ -754,7 +743,7 @@ export default App;
 Поместите файл модели ONNX, созданный вами в [yolov8+onnx.ipynb](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/colab/yolov8%2Bonnx.ipynb), 
 в `./public/model/`.
 ### Шаг2.2
-Измените `yolov8-seg.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
+Измените `model.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
 ```
           patterns: [
             { from: "node_modules/onnxruntime-web/dist/*.wasm", to: "static/js/[name][ext]" },
