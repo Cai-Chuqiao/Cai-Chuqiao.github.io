@@ -1,5 +1,5 @@
 ## 步骤1. 构建应用程序。
-1) 在应用文件夹 `onnx-app`中打开终端并运行`npm init –y`.
+1) 创建文件夹 `your_github_id.github.io`(your_github_id应改为您自己的github账户名),在其中打开终端并运行`npm init –y`.
 2) 将`package.json`的内容替换为以下内容：
 ```
 {
