@@ -748,7 +748,6 @@ export default App;
 10) Загрузите файл yarn.lock и поместите его в корневую папку. yarn.lock гарантирует согласованность версий зависимостей, установленных в разных средах. Это помогает избежать потенциальных проблем и ошибок, вызванных несовместимыми версиями зависимостей.<br>
 
 Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
-`git clone https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io`
 
 ## Шаг2. Развертывайте проекты React локально
 ### Шаг2.1
