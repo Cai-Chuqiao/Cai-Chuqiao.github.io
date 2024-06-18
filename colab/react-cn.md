@@ -784,6 +784,6 @@ yarn deploy
 ### 步骤3.5
 在存储库的`Settings`中选择`pages`，将`Branch`更改为`gh-pages`，然后点击`Save`，
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/d1456289-e90f-4af4-b16b-38bbdae2c04c)
-之后，您可以通过打开GitHub pages的URL来在线运行React项目。
+然后，您就可以通过打开GitHub pages的URL来在线运行React项目了。
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/3bf1d3f5-3499-4796-b0c9-4b95df9f6d9b)
 
