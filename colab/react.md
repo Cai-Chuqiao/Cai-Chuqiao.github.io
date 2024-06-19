@@ -144,7 +144,7 @@ root.render(
   </body>
 </html>
 ```
-В папке `public` создаем папку `model`. Загрузите nms-yolov8.onnx и mask-yolov8-seg.onnx и поместите их внутрь.
+В папке `public` создаем папку `model`. Загрузите [nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx) и [mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx) и поместите их внутрь.
 6) В папке `src` создаем папку `components`. В ней создаем файл `loader.js`:
 ```
 import React from "react";
@@ -734,7 +734,7 @@ const App = () => {
 };
 export default App;
 ```
-10) Загрузите файл yarn.lock и поместите его в корневую папку. yarn.lock гарантирует согласованность версий зависимостей, установленных в разных средах. Это помогает избежать потенциальных проблем и ошибок, вызванных несовместимыми версиями зависимостей.<br>
+10) Загрузите файл [yarn.lock](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/yarn.lock) и поместите его в корневую папку. yarn.lock гарантирует согласованность версий зависимостей, установленных в разных средах. Это помогает избежать потенциальных проблем и ошибок, вызванных несовместимыми версиями зависимостей.<br>
 
 Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
 
