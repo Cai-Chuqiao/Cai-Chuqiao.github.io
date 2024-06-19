@@ -95,7 +95,7 @@ const App = () => {
 };
 export default App;
 ```
-В папке src создать файл `index.js`:
+В папке src создать файл `index.js`:<br>
 在`src`文件夹中创建文件`index.js`：
 ```
 import React from "react";
