@@ -1,6 +1,9 @@
 ## Шаг1. Сборка приложения.
 1) В терминале в папке приложения `onnx-app` выполнить `npm init –y`.
 2) Заменить содержимое package.json на следующее:
+## 步骤1. 构建应用程序。
+1) 创建文件夹 `your_github_id.github.io`(your_github_id应改为您自己的github账户名),在其中打开终端并运行`npm init –y`.
+2) 将`package.json`的内容替换为以下内容：
 ```
 {
   "name": "yolov8seg",
@@ -45,6 +48,7 @@
 }
 ```
 3) В корне проекта создать файл `craco.config.js` со следующим содержанием:
+3) 在项目的根目录中，创建一个包含以下内容的文件`craco.config.js`：
 ```
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -76,6 +80,7 @@ module.exports = {
 };
 ```
 4) Проверить, что приложение собирается. Создадать папку `src` в корне проекта. В ней создаем файл `App.js`:
+4) 检查应用程序是否已构建。在项目根目录中创建一个`src`文件夹。在其中我们创建文件`App.js`：
 ```
 import React from "react";
 
@@ -89,6 +94,7 @@ const App = () => {
 export default App;
 ```
 В папке src создать файл `index.js`:
+在`src`文件夹中创建文件`index.js`：
 ```
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -102,6 +108,7 @@ root.render(
 );
 ```
 5) Создадать папку `public` в корне проекта. В ней создаем файл `index.html`:
+5) 在项目根目录中创建一个`public`文件夹。在其中我们创建文件`index.html`：
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -144,8 +151,10 @@ root.render(
   </body>
 </html>
 ```
-В папке `public` создаем папку `model`. Загрузите [nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx) и [mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx) и поместите их внутрь.
+В папке `public` создаем папку `model`. Загрузите [nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx) и [mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx) и поместите их внутрь.<br>
+在`public`文件夹中，创建一个`model`文件夹。下载[nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx)和[mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx)并将它们放入其中。
 6) В папке `src` создаем папку `components`. В ней создаем файл `loader.js`:
+6) 在`src`文件夹中，我们创建`components`文件夹。在其中我们创建文件`loader.js`：
 ```
 import React from "react";
 import "../style/loader.css";
@@ -163,6 +172,8 @@ export default Loader;
 ```
 7) В папке `src` создаем папку `style`. Она используется для хранения файлов стилей страницы.<br>
 В ней создаем файл `App.css`:
+7) 在`src`文件夹中，我们创建`style`文件夹。它用于存储页面样式文件。<br>
+在其中我们创建文件`App.css`：
 ```
 .App {
   height: 100vh;
@@ -229,6 +240,7 @@ button:hover {
 }
 ```
 В ней создаем файл `index.css`:
+在其中我们创建文件`index.css`：
 ```
 * {
   margin: 0;
@@ -248,6 +260,7 @@ code {
 }
 ```
 В ней создаем файл `loader.css`:
+在其中我们创建文件`loader.css`：
 ```
 .wrapper {
   background-color: rgba(255, 255, 255, 0.5);
@@ -304,6 +317,8 @@ code {
 ```
 8) В папке `src` создаем папку `utils`. Она используется для хранения некоторых файлов, в которых хранятся функции.
 В ней создаем файл `detect.js`, в него хранится функции для обработки вывода тензоров по модели yolov8:
+8) 在`src`文件夹中，我们创建`utils`文件夹。它用来放置一些存有项目所必需的函数的文件。
+在其中我们创建文件`detect.js`，它存储用来对yolov8模型输出张量进行后处理的函数：
 ```
 import cv from "@techstark/opencv-js";
 import { Tensor } from "onnxruntime-web";
@@ -507,6 +522,7 @@ const overflowBoxes = (box, maxSize) => {
 };
 ```
 В ней создаем файл `renderBox.js`, в него хранит функции рендеринга bounding box:
+在其中我们创建文件`renderBox.js`，它用来存储bounding box的渲染函数：
 ```
 /**
  * Render prediction boxes
@@ -590,6 +606,7 @@ export class Colors {
 }
 ```
 В ней создаем файл `labels.json`, в него хранятся классы, которые необходимо идентифицировать:
+在其中我们创建一个文件`labels.json`，它存储需要识别的类：
 ```
 [
   "airplane",
@@ -598,6 +615,7 @@ export class Colors {
 ]
 ```
 9) Для того чтобы запустить анализ, необходимо подготовить входные данные, т.е. преобразовать изображение в тензор. Для этого нужно запустить функцию предобработки для загруженного изображения и преобразовать ее в тензор. После того, как входной тензор рассчитан моделью и получены выходные данные, выходной тензор необходимо подвергнуть постобработке, чтобы отобразить результат распознавания на изображении. Итак, нужно добавить в `App.js` следующий код:
+9) 为了对图片进行分析，有必要准备输入数据，即将图像转换为张量。为此，您需要对加载的图像运行预处理函数并将其转换为张量。输入张量经过模型计算获得输出后，需要对输出张量进行后处理，以便在图像上绘制识别结果。因此，您需要将以下代码添加到`App.js`中：
 ```
 import React, { useState, useRef } from "react";
 import cv from "@techstark/opencv-js";
@@ -735,15 +753,21 @@ const App = () => {
 export default App;
 ```
 10) Загрузите файл [yarn.lock](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/yarn.lock) и поместите его в корневую папку. yarn.lock гарантирует согласованность версий зависимостей, установленных в разных средах. Это помогает избежать потенциальных проблем и ошибок, вызванных несовместимыми версиями зависимостей.<br>
-
+10) 下载[yarn.lock](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/yarn.lock)文件并将其放在根文件夹中。 yarn.lock文件可以保证不同环境下安装的依赖的版本一致。这有助于避免由不兼容的依赖项版本引起的潜在问题和错误。<br>
 Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
+React项目的程序基于[Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
 
 ## Шаг2. Развертывайте проекты React локально
 ### Шаг2.1
 Поместите файл модели ONNX, созданный вами в [yolov8+onnx.ipynb](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/colab/yolov8%2Bonnx.ipynb), 
 в `./public/model/`.
+## 步骤2. 本地部署 React 项目
+### 步骤2.1
+将您在[yolov8+onnx.ipynb](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/colab/yolov8%2Bonnx.ipynb)中导出的ONNX模型文件放置到`./public/model/`里.
 ### Шаг2.2
 Измените `model.onnx` на собственное имя файла ONNX в шаблонах файла `craco.config.js`.<br>
+### 步骤2.2
+在模板文件`craco.config.js`中将`model.onnx`更改为您自己的 ONNX 文件名。<br>
 ```
           patterns: [
             { from: "node_modules/onnxruntime-web/dist/*.wasm", to: "static/js/[name][ext]" },
@@ -753,6 +777,7 @@ export default App;
           ],
 ```
 Измените метку в `./src/utils/label.json` на класс, распознаваемый вашей собственной моделью.<br>
+将`./src/utils/label.json`中的标签更改为您自己的模型识别的类。<br>
 ```json
 [
   "airplane",
@@ -764,18 +789,31 @@ export default App;
 Если вы хотите развернуть проект React только локально, вы можете выполнить действия, описанные в [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master), 
 но если вы хотите развернуть проект React на страницах GitHub, вам не нужно выполнять `yarn install`, `yarn start` и `yarn build`, 
 иначе при загрузке проекта в собственный репозиторий github загрузка завершится неудачей из-за слишком больших файлов в node_modules.<br>
+### 步骤2.3
+如果您只想在本地部署React项目，可以按照[Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)中的步骤进行操作，
+但如果你想将 React 项目部署到 GitHub 页面，则暂时不需要执行 `yarn install`、`yarn start` 和 `yarn build`。
+否则，在将项目上传到自己的github仓库时，会因为node_modules中的文件太大而导致上传失败。<br>
 ## Шаг3. Развертывание проекта реагирования на страницах github
 ### Шаг3.1
 Создайте свой репозиторий на github. Имя репозитория — `your_github_id.github.io`, и репозиторий должен быть общедоступным.
+## 步骤3. 将 React 项目部署到 github pages
+### 步骤3.1
+在 github 上创建您的存储库。存储库名称为`your_github_id.github.io`(your_github_id应改为您的GitHub用户名)，并且存储库必须是公共的。
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/7ddf6e33-b88a-45e6-87c5-ee425e079a72)
 ### Шаг3.2
 Измените `"homepage": "https://your_github_id.github.io/"` в `package.json` в папке, где проект реагирования хранится локально, 
 на URL-адрес ваших собственных страниц github.
+### 步骤3.2
+将本地存储React项目根目录下 `package.json` 中的 `"homepage": "https://your_github_id.github.io/"` 更改为您自己的github pages的URL。
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/b4ef31b9-d7d8-4d11-b93e-f1efa07e1305)
 ### Шаг3.3
 Используйте `git pull`, чтобы загрузить проект в свой репозиторий.<br>
+### 步骤3.3
+使用`git pull`将本地项目拉入您的存储库。<br>
 ### Шаг3.4
 Откройте терминал в корневом каталоге вашего локального проекта React и последовательно запустите:<br>
+### 步骤3.4
+在本地 React 项目的根目录中打开终端并依次运行：<br>
 ```
 yarn add gh-pages --save-dev
 git add .
@@ -785,7 +823,10 @@ yarn deploy
 ```
 ### Шаг3.5
 Выберите `pages` в `Settings` вашего репозитория, измените `Branch` на `gh-pages` и нажмите `Save`, 
+### 步骤3.5
+在存储库的`Settings`中选择`pages`，将`Branch`更改为`gh-pages`，然后点击`Save`，
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/d1456289-e90f-4af4-b16b-38bbdae2c04c)
 после чего вы сможете запустить свой проект React, открыв URL-адрес ваших страниц GitHub.
+然后，您就可以通过打开GitHub pages的URL来在线运行React项目了。
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/3bf1d3f5-3499-4796-b0c9-4b95df9f6d9b)
 
