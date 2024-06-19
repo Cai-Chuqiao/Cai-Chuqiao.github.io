@@ -144,7 +144,7 @@ root.render(
   </body>
 </html>
 ```
-在`public`文件夹中，创建一个`model`文件夹。下载`nms-yolov8.onnx`和`mask-yolov8-seg.onnx`并将它们放入其中。
+在`public`文件夹中，创建一个`model`文件夹。下载[nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx)和[mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx)并将它们放入其中。
 6) 在`src`文件夹中，我们创建`components`文件夹。在其中我们创建文件`loader.js`：
 ```
 import React from "react";
@@ -734,7 +734,7 @@ const App = () => {
 };
 export default App;
 ```
-10) 下载yarn.lock 文件并将其放在根文件夹中。 yarn.lock文件可以保证不同环境下安装的依赖的版本一致。这有助于避免由不兼容的依赖项版本引起的潜在问题和错误。<br>
+10) 下载[yarn.lock](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/yarn.lock)文件并将其放在根文件夹中。 yarn.lock文件可以保证不同环境下安装的依赖的版本一致。这有助于避免由不兼容的依赖项版本引起的潜在问题和错误。<br>
 
 React项目的程序基于[Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
 
