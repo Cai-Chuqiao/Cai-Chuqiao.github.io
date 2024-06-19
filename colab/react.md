@@ -48,7 +48,7 @@
 }
 ```
 3) В корне проекта создать файл `craco.config.js` со следующим содержанием:
-
+### 
 3) 在项目的根目录中，创建一个包含以下内容的文件`craco.config.js`：
 ```
 const CopyPlugin = require("copy-webpack-plugin");
