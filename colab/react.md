@@ -155,7 +155,7 @@ root.render(
 </html>
 ```
 В папке `public` создаем папку `model`. Загрузите [nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx) и [mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx) и поместите их внутрь.<br>
-在`public`文件夹中，创建一个`model`文件夹。下载[nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx)和[mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx)并将它们放入其中。
+在`public`文件夹中，创建一个`model`文件夹。下载[nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx)和[mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx)并将它们放入其中。<br>
 6) В папке `src` создаем папку `components`. В ней создаем файл `loader.js`:
 ### 
 6) 在`src`文件夹中，我们创建`components`文件夹。在其中我们创建文件`loader.js`：
