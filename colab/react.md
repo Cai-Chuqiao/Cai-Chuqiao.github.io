@@ -80,7 +80,8 @@ module.exports = {
   },
 };
 ```
-4) Проверить, что приложение собирается. Создадать папку `src` в корне проекта. В ней создаем файл `App.js`:<br>
+4) Проверить, что приложение собирается. Создадать папку `src` в корне проекта. В ней создаем файл `App.js`:
+### 
 4) 检查应用程序是否已构建。在项目根目录中创建一个`src`文件夹。在其中我们创建文件`App.js`：
 ```
 import React from "react";
@@ -109,6 +110,7 @@ root.render(
 );
 ```
 5) Создадать папку `public` в корне проекта. В ней создаем файл `index.html`:
+### 
 5) 在项目根目录中创建一个`public`文件夹。在其中我们创建文件`index.html`：
 ```
 <!DOCTYPE html>
@@ -155,6 +157,7 @@ root.render(
 В папке `public` создаем папку `model`. Загрузите [nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx) и [mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx) и поместите их внутрь.<br>
 在`public`文件夹中，创建一个`model`文件夹。下载[nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx)和[mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx)并将它们放入其中。
 6) В папке `src` создаем папку `components`. В ней создаем файл `loader.js`:
+### 
 6) 在`src`文件夹中，我们创建`components`文件夹。在其中我们创建文件`loader.js`：
 ```
 import React from "react";
