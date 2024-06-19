@@ -156,6 +156,7 @@ root.render(
 ```
 В папке `public` создаем папку `model`. Загрузите [nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx) и [mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx) и поместите их внутрь.<br>
 在`public`文件夹中，创建一个`model`文件夹。下载[nms-yolov8.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/nms-yolov8.onnx)和[mask-yolov8-seg.onnx](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/public/model/mask-yolov8-seg.onnx)并将它们放入其中。<br>
+
 6) В папке `src` создаем папку `components`. В ней создаем файл `loader.js`:
 ### 
 6) 在`src`文件夹中，我们创建`components`文件夹。在其中我们创建文件`loader.js`：
@@ -762,6 +763,7 @@ export default App;
 10) Загрузите файл [yarn.lock](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/yarn.lock) и поместите его в корневую папку. yarn.lock гарантирует согласованность версий зависимостей, установленных в разных средах. Это помогает избежать потенциальных проблем и ошибок, вызванных несовместимыми версиями зависимостей.<br>
 ### 
 10) 下载[yarn.lock](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/blob/main/yarn.lock)文件并将其放在根文件夹中。 yarn.lock文件可以保证不同环境下安装的依赖的版本一致。这有助于避免由不兼容的依赖项版本引起的潜在问题和错误。<br>
+### 
 Программ на основе [Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
 React项目的程序基于[Hyuto/yolov8-seg-onnxruntime-web](https://github.com/Hyuto/yolov8-seg-onnxruntime-web/tree/master)<br>
 
@@ -834,7 +836,7 @@ yarn deploy
 ### 步骤3.5
 在存储库的`Settings`中选择`pages`，将`Branch`更改为`gh-pages`，然后点击`Save`，
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/d1456289-e90f-4af4-b16b-38bbdae2c04c)
-после чего вы сможете запустить свой проект React, открыв URL-адрес ваших страниц GitHub.
+после чего вы сможете запустить свой проект React, открыв URL-адрес ваших страниц GitHub.<br>
 然后，您就可以通过打开GitHub pages的URL来在线运行React项目了。
 ![image](https://github.com/Cai-Chuqiao/Cai-Chuqiao.github.io/assets/150286732/3bf1d3f5-3499-4796-b0c9-4b95df9f6d9b)
 
